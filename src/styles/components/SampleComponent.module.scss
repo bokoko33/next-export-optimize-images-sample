@@ -1,0 +1,7 @@
+@use '~/styles/base/variables' as *;
+@use '~/styles/base/mixins' as *;
+@use '~/styles/base/functions' as *;
+
+.root {
+  color: red;
+}

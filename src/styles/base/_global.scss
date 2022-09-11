@@ -1,0 +1,24 @@
+@use '~/styles/base/variables' as *;
+@use '~/styles/base/mixins' as *;
+@use '~/styles/base/functions' as *;
+
+:root {
+  width: 100%;
+
+  // rem()で可変にする場合は下記を有効に
+  // font-size: min(#{vw(16)}, 16px);
+
+  // @include mq() {
+  //   font-size: vw_sp(16);
+  // }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}

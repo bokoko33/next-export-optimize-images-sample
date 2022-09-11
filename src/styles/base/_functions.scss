@@ -1,0 +1,40 @@
+@use '~/styles/base/variables' as *;
+@use 'sass:math';
+
+// calculation
+@function rem($size) {
+  @return math.div($size, 16) * 1rem;
+}
+
+@function vw($size) {
+  @return math.div($size, map-get($design-size, pc-width)) * 100vw;
+}
+
+@function vw_sp($size) {
+  @return math.div($size, map-get($design-size, sp-width)) * 100vw;
+}
+
+@function vh($size) {
+  @return math.div($size, map-get($design-size, pc-height)) * 100vh;
+}
+
+@function vh_sp($size) {
+  @return math.div($size, map-get($design-size, sp-height)) * 100vh;
+}
+
+// mvをいい感じにする
+@function mv_pc($size) {
+  @if $size < 0 {
+    @return clamp(#{$size}px, #{vh($size)}, #{$size * $mv-min-ratio-pc}px);
+  } @else {
+    @return clamp(#{$size * $mv-min-ratio-pc}px, #{vh($size)}, #{$size}px);
+  }
+}
+
+@function mv_sp($size) {
+  @if $size < 0 {
+    @return max(#{vw_sp($size)}, #{$size * 0.5 * $mv-max-ratio-sp}px);
+  } @else {
+    @return min(#{vw_sp($size)}, #{$size * 0.5 * $mv-max-ratio-sp}px);
+  }
+}

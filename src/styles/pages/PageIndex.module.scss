@@ -1,0 +1,8 @@
+@use '~/styles/base/variables' as *;
+@use '~/styles/base/mixins' as *;
+@use '~/styles/base/functions' as *;
+
+.root {
+  width: 80%;
+  margin: 0 auto;
+}

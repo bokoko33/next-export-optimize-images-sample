@@ -1,0 +1,30 @@
+@use '~/styles/base/variables' as *;
+
+// media query
+@mixin mq($size: md) {
+  @media screen and (max-width: #{map-get($breakpoints, $size)}) {
+    @content;
+  }
+}
+
+@mixin mq_min($size: md) {
+  @media not all and (max-width: #{map-get($breakpoints, $size)}) {
+    @content;
+  }
+}
+
+// 任意のbreakpointを指定できる
+@mixin mq_free($bp: map-get($breakpoints, md)) {
+  @media screen and (max-width: #{$bp}px) {
+    @content;
+  }
+}
+
+// hover only pointer device
+@mixin hover() {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}

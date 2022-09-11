@@ -1,0 +1,16 @@
+@use '~/styles/base/variables' as *;
+@use '~/styles/base/mixins' as *;
+@use '~/styles/base/functions' as *;
+
+// for each device
+[data-only-show='pc'] {
+  @include mq() {
+    display: none;
+  }
+}
+
+[data-only-show='sp'] {
+  @include mq_min() {
+    display: none;
+  }
+}

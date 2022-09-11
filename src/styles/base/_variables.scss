@@ -1,0 +1,58 @@
+@use 'sass:math';
+
+// breakpoints
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+);
+
+// design size
+$design-size: (
+  'pc-width': 1440,
+  'pc-height': 880,
+  'sp-width': 750,
+  'sp-height': 1334,
+);
+
+//（手書きのstyleで登場するものは、map-getするとき補完が効かず不便なので普通に列挙する）
+// color
+$color-white: #ffffff;
+$color-black: #072736;
+$color-blue: #0097e0;
+$color-sky: #ddeffc;
+$color-orange: #ff8553;
+$color-yellow: #fff581;
+$color-gray-1: #454545;
+$color-gray-2: #e5e5e5;
+$color-gray-3: #c4c4c4;
+$color-gray-4: #777777;
+$color-gray-5: #f7f7f7;
+
+// font-family
+$font-yu-go: '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium',
+  '游ゴシック', 'Yu Gothic', sans-serif;
+
+// z-index
+$z-index-global-header: 100;
+
+// layout
+$global-header-height-pc: 88;
+$global-header-height-sp: 120;
+
+$mv-height-pc: map-get($design-size, 'pc-height');
+$mv-max-height-pc: 920;
+$mv-min-height-pc: 700;
+$mv-min-ratio-pc: math.div($mv-min-height-pc, $mv-height-pc);
+$mv-max-ratio-sp: 1.65;
+
+// animation
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+$ease-base-transform: $ease-out-quint;
+$ease-base-material: linear;
+
+$duration-base-transform: 0.6s;
+$duration-base-material: 0.2s;
