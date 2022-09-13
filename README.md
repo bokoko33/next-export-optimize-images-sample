@@ -1,16 +1,15 @@
-# Next.js Template
+# next-export-optimize-images 出力確認
 
-Next.js を使用した最小限のサイト制作用テンプレート
-TypeScript は使用していません
+画像によって export 時にパスに不具合が起きている模様
 
-# Usage
-
-このリポジトリをテンプレートとして Create Next App する
+開発
 
 ```
-npx create-next-app -e https://github.com/Bokoko33/nextjs-template
+npm run dev
+```
 
-# or
+エクスポート
 
-yarn create-next-app -e https://github.com/Bokoko33/nextjs-template
+```
+npm run export
 ```
